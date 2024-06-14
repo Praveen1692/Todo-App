@@ -47,13 +47,13 @@ function App() {
   };
   const handleTodoClick = (id) => {
     setEditableTodoId(id);
-    const todo = todo.find((todo) => todo.id === id);
-    setEditableTodoText(todo.todo);
+    const todos = todo.find((todo) => todo.id === id);
+    setEditableTodoText(todos.todo);
   };
 
   return (
     <>
-      <h1>Start Todo App</h1>
+      <h1>Start change Todo App</h1>
       <div>
         <input
           type="text"
@@ -77,7 +77,7 @@ function App() {
                 <input
                   type="text"
                   value={editableTodoText}
-                  onChange={handleTodoChange}
+                  onChange={(e)=>setEditableTodoText(e.target.value)}
                   onBlur={handleTodoBlur}
                   onKeyPress={handleTodoKeyPress}
                   autoFocus
